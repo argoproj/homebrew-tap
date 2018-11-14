@@ -13,11 +13,11 @@ brew uninstall argocd
 ```
 
 ## Updating a tap
-To update and test formula, update the `sha256` field in the corresponding `.rb` files from the ouptut of:
+To update and test formula, run ./update.sh <path/to/binary>. e.g.:
 ```
-shasum -a 256 ./path/to/binary
+./update.sh ~/go/src/github.com/argoproj/argo-cd/dist/argocd-darwin-amd64
 ```
 Then verify the tap works by running:
 ```
-brew install --build-from-source ./<tapname>.rb
+brew [install|upgrade] --build-from-source ./<tapname>.rb
 ```
