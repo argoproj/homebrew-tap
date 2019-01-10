@@ -2,9 +2,9 @@
 class Argocd < Formula
     desc "GitOps Continuous Delivery for Kubernetes"
     homepage "https://argoproj.io"
-    url "https://github.com/argoproj/argo-cd/releases/download/v0.11.0-rc4/argocd-darwin-amd64"
-    sha256 "9986e69c5188d80fb93751dbab3577da3b683acb5ae9af971218ffdddf68e0f4"
-    version "0.11.0-rc4"
+    url "https://github.com/argoproj/argo-cd/releases/download/v0.11.0-rc6/argocd-darwin-amd64"
+    sha256 "7d98ceb6b461b95f3e31d92ace743197360c3bb6ef52be430b0de92d04659bba"
+    version "0.11.0-rc6"
 
     bottle :unneeded
 
