@@ -11,5 +11,17 @@ class Argocd < Formula
     def install
         bin.install "argocd-darwin-amd64"
         mv bin/"argocd-darwin-amd64", bin/"argocd"
+
+        # Ensure argocd is executable
+        require "fileutils"
+        FileUtils.chmod("+x","#{bin}/argocd")
+
+        # Install bash completion
+        output = Utils.popen_read("#{bin}/argocd completion bash")
+        (bash_completion/"argocd").write output
+
+        # Install zsh completion
+        output = Utils.popen_read("#{bin}/argocd completion zsh")
+        (zsh_completion/"_argocd").write output
     end
 end
