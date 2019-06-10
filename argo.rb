@@ -1,9 +1,9 @@
 class Argo < Formula
     desc "Get stuff done with container-native workflows for Kubernetes."
     homepage "https://argoproj.io"
-    url "https://github.com/argoproj/argo/releases/download/v2.2.1/argo-darwin-amd64"
-    sha256 "41239e4a4bb1d45ade51fe2f68ad9697f7368bab50abac8e5aca53e8a9564444"
-    version "2.2.1"
+    url "https://github.com/argoproj/argo/releases/download/v2.3.0/argo-darwin-amd64"
+    sha256 "f74402daa95168bbb9f6c62117a28b8260da5e2357d71681d9f5b458fb497542"
+    version "2.3.0"
 
     bottle :unneeded
 
