@@ -10,5 +10,17 @@ class Argo < Formula
     def install
         bin.install "argo-darwin-amd64"
         mv bin/"argo-darwin-amd64", bin/"argo"
+
+        # Ensure argo is executable
+        require "fileutils"
+        FileUtils.chmod("+x","#{bin}/argo")
+        
+        # Install bash completion
+        output = Utils.popen_read("#{bin}/argo completion bash")
+        (bash_completion/"argo").write output
+        
+        # Install zsh completion
+        output = Utils.popen_read("#{bin}/argo completion zsh")
+        (zsh_completion/"_argo").write output
     end
 end
