@@ -12,7 +12,6 @@ class Argo < Formula
         mv bin/"argo-darwin-amd64", bin/"argo"
 
         # Ensure argo is executable
-        require "fileutils"
         FileUtils.chmod("+x","#{bin}/argo")
         
         # Install bash completion

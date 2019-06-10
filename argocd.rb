@@ -13,7 +13,6 @@ class Argocd < Formula
         mv bin/"argocd-darwin-amd64", bin/"argocd"
 
         # Ensure argocd is executable
-        require "fileutils"
         FileUtils.chmod("+x","#{bin}/argocd")
 
         # Install bash completion
