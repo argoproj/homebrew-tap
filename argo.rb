@@ -1,25 +1,25 @@
+# This is an auto-generated file. DO NOT EDIT
 class Argo < Formula
     desc "Get stuff done with container-native workflows for Kubernetes."
     homepage "https://argoproj.io"
-    url "https://github.com/argoproj/argo/releases/download/v2.4.1/argo-darwin-amd64"
-    sha256 "fceff61499b1c0d0609ba9b7b09506974a544ce1b9c6efaecc1372e425a9cb8e"
-    version "2.4.1"
+    baseurl = "https://github.com/argoproj/argo/releases/download"
+    version "v2.4.2"
 
     bottle :unneeded
 
+    if OS.mac?
+      kernel = "darwin"
+      sha256 "f2a27bac1faa12eb0f1f4542cd8e156ffad34de3823fd98237c43524da36641e"
+    elsif OS.linux?
+      kernel = "linux"
+      sha256 "5d061a6195eaadbee403f0bf5aea3a0951773219656190b426827e535c178993"
+    end
+
+    @@bin_name = "argo-" + kernel + "-amd64"
+    url baseurl + "/v2.4.2/" + @@bin_name
+
     def install
-        bin.install "argo-darwin-amd64"
-        mv bin/"argo-darwin-amd64", bin/"argo"
-
-        # Ensure argo is executable
-        FileUtils.chmod("+x","#{bin}/argo")
-
-        # Install bash completion
-        output = Utils.popen_read("#{bin}/argo completion bash")
-        (bash_completion/"argo").write output
-
-        # Install zsh completion
-        output = Utils.popen_read("#{bin}/argo completion zsh")
-        (zsh_completion/"_argo").write output
+      bin.install @@bin_name
+      mv bin/ + @@bin_name.to_s, bin/"argo"
     end
 end
