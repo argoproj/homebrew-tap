@@ -3,7 +3,7 @@
 set -e -x
 
 if [ "$#" -lt 2 ]; then
-  echo "Usage: ./update.sh <argo|argocd> VERSION"
+  echo "Usage: ./update.sh <argo|argocd|kubectl-argo-rollouts> VERSION"
   exit 1
 fi
 
@@ -18,6 +18,10 @@ elif [ "${CLI_NAME}" = "argo" ]; then
   URL_BASE="https://github.com/argoproj/argo/releases/download"
   CLASSNAME="Argo"
   DESC="Get stuff done with container-native workflows for Kubernetes."
+elif [ "${CLI_NAME}" = "kubectl-argo-rollouts" ]; then
+  URL_BASE="https://github.com/argoproj/argo-rollouts/releases/download"
+  CLASSNAME="KubectlArgoRollouts"
+  DESC="Kubectl Argo Rollouts Plugin."
 else
   echo "Unsupported binary: ${CLI_NAME}"
   exit 1
