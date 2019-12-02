@@ -3,20 +3,20 @@ class Argocd < Formula
     desc "GitOps Continuous Delivery for Kubernetes"
     homepage "https://argoproj.io"
     baseurl = "https://github.com/argoproj/argo-cd/releases/download"
-    version "v1.3.0"
+    version "v1.3.1"
 
     bottle :unneeded
 
     if OS.mac?
       kernel = "darwin"
-      sha256 "192756be229b31d568b588992c3f01413f3fae8354c753247be35deff963213e"
+      sha256 "d266cd7aec1a584f31958103baa491c4fb022cf6a57657a98d4cc34eb5c80414"
     elsif OS.linux?
       kernel = "linux"
-      sha256 "7363e21991d31d7ad0d7b1602d388116bd81b7bf22b69ca85ccf5275a37c57d7"
+      sha256 "c5f8908eccdb322ff3170ac0c749af7897e6c5a31cd964f1ec792acf2493e8a9"
     end
 
     @@bin_name = "argocd-" + kernel + "-amd64"
-    url baseurl + "/v1.3.0/" + @@bin_name
+    url baseurl + "/v1.3.1/" + @@bin_name
 
     def install
       bin.install @@bin_name
