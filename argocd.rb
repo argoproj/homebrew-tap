@@ -9,10 +9,10 @@ class Argocd < Formula
 
     if OS.mac?
       kernel = "darwin"
-      sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+      sha256 "dac4db6d3edd1d3b54664bfe46f333f615eafe3741a9c4ffa9e43df7ab7aba47"
     elsif OS.linux?
       kernel = "linux"
-      sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+      sha256 "94900db8194104f4714665c350ca7e849cb27d224965a994b2f4da1729aa00ba"
     end
 
     @@bin_name = "argocd-" + kernel + "-amd64"
