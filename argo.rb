@@ -9,10 +9,10 @@ class Argo < Formula
 
     if OS.mac?
       kernel = "darwin"
-      sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+      sha256 "12ebccc0c2f1316e9270b11ceff5f59609934e6f4bd4e59d881bd44bbcd9b806"
     elsif OS.linux?
       kernel = "linux"
-      sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+      sha256 "9867dd272d376ffae26d80b98710b69c71d858d60ec391760fa5faa08954ebe4"
     end
 
     @@bin_name = "argo-" + kernel + "-amd64"
