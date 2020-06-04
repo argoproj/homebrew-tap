@@ -3,20 +3,20 @@ class KubectlArgoRollouts < Formula
     desc "Kubectl Argo Rollouts Plugin."
     homepage "https://argoproj.io"
     baseurl = "https://github.com/argoproj/argo-rollouts/releases/download"
-    version "v0.8.2"
+    version "v0.8.3"
 
     bottle :unneeded
 
     if OS.mac?
       kernel = "darwin"
-      sha256 "24a7a86b2ca3eb732947a4c92658be7d0909aa50c31bdc62a8158a9e16cffb27"
+      sha256 "2d9a20f3ffd270f06dce71358f2a50482b50893213060509469177f6272e41a7"
     elsif OS.linux?
       kernel = "linux"
-      sha256 "a67000ea0e344cd094525f784cd02d5b4de9a4b4cc5c7d67a4d77a5caeca28c7"
+      sha256 "0181fcdadee043755196dc03580d1b42ca99c022b472b329a1aa876f4a904f4d"
     end
 
     @@bin_name = "kubectl-argo-rollouts-" + kernel + "-amd64"
-    url baseurl + "/v0.8.2/" + @@bin_name
+    url baseurl + "/v0.8.3/" + @@bin_name
 
     def install
       bin.install @@bin_name
