@@ -3,20 +3,20 @@ class Argo < Formula
     desc "Get stuff done with container-native workflows for Kubernetes."
     homepage "https://argoproj.io"
     baseurl = "https://github.com/argoproj/argo/releases/download"
-    version "v2.9.2"
+    version "v2.9.3"
 
     bottle :unneeded
 
     if OS.mac?
       kernel = "darwin"
-      sha256 "7712d914b69220c5b0e1635bc8d7565fad6a74ad1a6989d7bb73cef69c42b6da"
+      sha256 "de2f2461f1ca7e90c538cd8457e791281c5f486169913e6209440000bc0614f0"
     elsif OS.linux?
       kernel = "linux"
-      sha256 "88a95a00741455e22970517d9b6ca714307189814c74424408b956cdd36d8450"
+      sha256 "77417b282020b7cfb53a1b2da37c55912bbb63a53c4b3ac784813a3814cc27d0"
     end
 
     @@bin_name = "argo-" + kernel + "-amd64"
-    url baseurl + "/v2.9.2/" + @@bin_name
+    url baseurl + "/v2.9.3/" + @@bin_name
 
     def install
       bin.install @@bin_name
