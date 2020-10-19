@@ -1,3 +1,4 @@
 {
-  "argo": "homebrew/core"
+  "argo": "homebrew/core",
+  "argocd": "homebrew/core"
 }
