@@ -1,25 +1,21 @@
-# Homebrew Tap for argo
+# Homebrew Tap for argoproj binaries
+
+NOTE: Both argo and argocd have moved to homebrew-core. This repo now only contains kubectl-argo-rollouts, which may move in the future.
 
 ## Install
 ```bash
-brew install argoproj/tap/argo
-brew install argoproj/tap/argocd
 brew install argoproj/tap/kubectl-argo-rollouts
 ```
 
 ## Uninstall
 ```bash
-brew uninstall argo
-brew uninstall argocd
 brew uninstall kubectl-argo-rollouts
 ```
 
 ## Updating a tap
 To update and test formula, run ./update.sh <binary-name>. e.g.:
 ```bash
-./update.sh argo v2.4.2
-./update.sh argocd v1.2.4
-./update.sh kubectl-argo-rollouts v0.6.0
+./update.sh kubectl-argo-rollouts v0.9.2
 ```
 
 Then verify the tap works by running:
