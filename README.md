@@ -15,10 +15,10 @@ brew uninstall kubectl-argo-rollouts
 ## Updating a tap
 To update and test formula, run ./update.sh <binary-name>. e.g.:
 ```bash
-./update.sh kubectl-argo-rollouts v0.9.2
+./update.sh kubectl-argo-rollouts v1.0.0
 ```
 
 Then verify the tap works by running:
 ```bash
-brew [install|upgrade] --build-from-source ./<tapname>.rb
+brew [install|upgrade] --build-from-source ./kubectl-argo-rollouts.rb
 ```
