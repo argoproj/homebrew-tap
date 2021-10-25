@@ -5,8 +5,6 @@ class KubectlArgoRollouts < Formula
     baseurl = "https://github.com/argoproj/argo-rollouts/releases/download"
     version "v1.0.4"
 
-    bottle :unneeded
-
     if OS.mac?
       kernel = "darwin"
       sha256 "98ff3334a7e136fbbb74d7e73064d921baeb94ca1d64fe2d4010837ae6601a8e"
