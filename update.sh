@@ -46,8 +46,6 @@ class ${CLASSNAME} < Formula
     baseurl = \"${URL_BASE}\"
     version \"${VERSION}\"
 
-    bottle :unneeded
-
     if OS.mac?
       kernel = \"darwin\"
       sha256 \"${OSX_SHA256}\"
