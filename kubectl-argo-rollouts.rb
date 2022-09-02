@@ -4,7 +4,7 @@ class KubectlArgoRollouts < Formula
     homepage "https://argoproj.io"
     baseurl = "https://github.com/argoproj/argo-rollouts/releases/download"
     version "v1.2.2"
-    head = "https://github.com/argoproj/argo-rollouts"
+    head "https://github.com/argoproj/argo-rollouts"
     depends_on "go" => :build
 
     if OS.mac?
