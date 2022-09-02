@@ -21,7 +21,7 @@ class KubectlArgoRollouts < Formula
     def install
       if build.head?
         ENV["GOPATH"] = buildpath
-        path = buildpath/"argo-rollouts/cmd/kubectl-argo-rollouts"
+        path = buildpath/"cmd/kubectl-argo-rollouts"
         cd path do
           system "go", "build", "-o", "#{bin}/kubectl-argo-rollouts"
         end
