@@ -27,7 +27,7 @@ class KubectlArgoRollouts < Formula
         bin_path.install Dir["*"]
 
         cd bin_path do
-          system "go", "build", "-o", bin/"hostsfile", "cmd/kubectl-argo-rollouts/main.go"
+          system "go", "build", "-o", bin/"kubectl-argo-rollouts", "cmd/kubectl-argo-rollouts/main.go"
         end
       else
         bin.install @@bin_name
