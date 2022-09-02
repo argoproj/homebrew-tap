@@ -4,6 +4,8 @@ class KubectlArgoRollouts < Formula
     homepage "https://argoproj.io"
     baseurl = "https://github.com/argoproj/argo-rollouts/releases/download"
     version "v1.2.2"
+    head = "https://github.com/argoproj/argo-rollouts"
+    depends_on "go" => :build
 
     if OS.mac?
       kernel = "darwin"
@@ -17,7 +19,15 @@ class KubectlArgoRollouts < Formula
     url baseurl + "/v1.2.2/" + @@bin_name
 
     def install
-      bin.install @@bin_name
-      mv bin/ + @@bin_name.to_s, bin/"kubectl-argo-rollouts"
+      if build.head?
+        ENV["GOPATH"] = buildpath
+        path = buildpath/"src/github.com/argoproj/argo-rollouts/kubectl-argo-rollouts"
+        cd path do
+          system "go", "build", "-o", "#{bin}/kubectl-argo-rollouts"
+        end
+      else
+        bin.install @@bin_name
+        mv bin/ + @@bin_name.to_s, bin/"kubectl-argo-rollouts"
+      end
     end
 end
