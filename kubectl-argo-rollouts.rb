@@ -20,9 +20,14 @@ class KubectlArgoRollouts < Formula
 
     def install
       if build.head?
-        path = buildpath/"cmd/kubectl-argo-rollouts"
-        cd path do
-          system "go", "build", "-o", "#{bin}/kubectl-argo-rollouts"
+
+        bin_path = buildpath/"src/github.com/argoproj/argo-rollouts"
+        # Copy all files from their current location (GOPATH root)
+        # to $GOPATH/src/github.com/kevinburke/hostsfile
+        bin_path.install Dir["*"]
+
+        cd bin_path do
+          system "go", "build", "-o", bin/"hostsfile", "cmd/kubectl-argo-rollouts/main.go"
         end
       else
         bin.install @@bin_name
