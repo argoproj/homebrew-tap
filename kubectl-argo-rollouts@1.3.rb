@@ -1,4 +1,3 @@
-# This is an auto-generated file. DO NOT EDIT
 class KubectlArgoRolloutsAT13 < Formula
     desc "Kubectl Argo Rollouts Plugin."
     homepage "https://argoproj.io"
