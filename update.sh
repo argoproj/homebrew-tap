@@ -9,6 +9,7 @@ fi
 
 CLI_NAME="$1"
 VERSION="$2"
+BREW_VERSION="$3"
 
 if [ "${CLI_NAME}" = "argocd" ]; then
   URL_BASE="https://github.com/argoproj/argo-cd/releases/download"
@@ -39,8 +40,10 @@ LINUX_BINPATH="/tmp/${LINUX_CLI_NAME}"
 curl -L -o ${LINUX_BINPATH} -s "${URL_BASE}/${VERSION}/${LINUX_CLI_NAME}"
 LINUX_SHA256=$(shasum -a 256 "${LINUX_BINPATH}" | awk '{print $1}')
 
+CLASS_POSTFIX=$(echo ${BREW_VERSION} | tr -d '.')
+CLASS_POSTFIX=$(echo ${CLASS_POSTFIX} | sed "s/@/AT/g")
 TEMPLATE="# This is an auto-generated file. DO NOT EDIT
-class ${CLASSNAME} < Formula
+class ${CLASSNAME}${CLASS_POSTFIX} < Formula
     desc \"${DESC}\"
     homepage \"https://argoproj.io\"
     baseurl = \"${URL_BASE}\"
@@ -63,4 +66,4 @@ class ${CLASSNAME} < Formula
     end
 end"
 
-  echo "${TEMPLATE}" > "${CLI_NAME}.rb"
+echo "${TEMPLATE}" > "${CLI_NAME}${BREW_VERSION}.rb"
