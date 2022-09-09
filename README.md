@@ -13,9 +13,16 @@ brew uninstall kubectl-argo-rollouts
 ```
 
 ## Updating a tap
-To update and test formula, run ./update.sh <binary-name>. e.g.:
+To update and test formula, run ./update.sh <binary-name> <brew-version>. e.g.:
+
+To update main non versions formula
 ```bash
 ./update.sh kubectl-argo-rollouts v1.0.0
+```
+
+To update a versioned formula for rollouts version 1.3
+```bash
+./update.sh kubectl-argo-rollouts v1.3.0 @1.3
 ```
 
 Then verify the tap works by running:
