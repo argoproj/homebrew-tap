@@ -1,5 +1,5 @@
 # This is an auto-generated file. DO NOT EDIT
-class KubectlArgoRollouts < Formula
+class KubectlArgoRolloutsAT16 < Formula
     desc "Kubectl Argo Rollouts Plugin."
     homepage "https://argoproj.io"
     baseurl = "https://github.com/argoproj/argo-rollouts/releases/download"
