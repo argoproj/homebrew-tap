@@ -7,10 +7,10 @@ class KubectlArgoRollouts < Formula
 
     if OS.mac?
       kernel = "darwin"
-      sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+      sha256 "637d9fcda4fc8380b908278ed691b7c52b767bb6a966b0869fbc4c38e722be36"
     elsif OS.linux?
       kernel = "linux"
-      sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+      sha256 "0a329c8540b79b01dc58d2533e8a6f2130107ecb97cd04c0eff8527689c60e58"
     end
 
     @@bin_name = "kubectl-argo-rollouts-" + kernel + "-amd64"
