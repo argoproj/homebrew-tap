@@ -31,13 +31,13 @@ fi
 # OSX
 OSX_CLI_NAME="${CLI_NAME}-darwin-amd64"
 OSX_BINPATH="/tmp/${OSX_CLI_NAME}"
-curl -L -o ${OSX_BINPATH} -s "${URL_BASE}/${VERSION}/${OSX_CLI_NAME}"
+curl --fail -L -o ${OSX_BINPATH} -s "${URL_BASE}/${VERSION}/${OSX_CLI_NAME}" || (echo "Failed to curl (${URL_BASE}/${VERSION}/${OSX_CLI_NAME})" && exit 1)
 OSX_SHA256=$(shasum -a 256 "${OSX_BINPATH}" | awk '{print $1}')
 
 # Linux
 LINUX_CLI_NAME="${CLI_NAME}-linux-amd64"
 LINUX_BINPATH="/tmp/${LINUX_CLI_NAME}"
-curl -L -o ${LINUX_BINPATH} -s "${URL_BASE}/${VERSION}/${LINUX_CLI_NAME}"
+curl --fail -L -o ${LINUX_BINPATH} -s "${URL_BASE}/${VERSION}/${LINUX_CLI_NAME}" || (echo "Failed to curl (${URL_BASE}/${VERSION}/${LINUX_CLI_NAME})" && exit 1)
 LINUX_SHA256=$(shasum -a 256 "${LINUX_BINPATH}" | awk '{print $1}')
 
 CLASS_POSTFIX=$(echo ${BREW_VERSION} | tr -d '.')
