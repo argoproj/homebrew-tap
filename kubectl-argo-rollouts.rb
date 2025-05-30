@@ -4,6 +4,7 @@ class KubectlArgoRollouts < Formula
     homepage "https://argoproj.io"
     baseurl = "https://github.com/argoproj/argo-rollouts/releases/download"
     version "v1.8.1"
+    revision 1
 
     if OS.mac?
       kernel = "darwin"
@@ -19,5 +20,13 @@ class KubectlArgoRollouts < Formula
     def install
       bin.install @@bin_name
       mv bin/ + @@bin_name.to_s, bin/"kubectl-argo-rollouts"
+      kubectl_plugin_completion = <<~EOS
+        #!/usr/bin/env sh
+        # Call the __complete command passing it all arguments
+        kubectl argo rollouts __complete "$@"
+      EOS
+
+      (bin/"kubectl_complete-argo-rollouts").write(kubectl_plugin_completion)
+      chmod 0755, bin/"kubectl_complete-argo-rollouts"
     end
 end
