@@ -11,15 +11,7 @@ CLI_NAME="$1"
 VERSION="$2"
 BREW_VERSION="$3"
 
-if [ "${CLI_NAME}" = "argocd" ]; then
-  URL_BASE="https://github.com/argoproj/argo-cd/releases/download"
-  CLASSNAME="Argocd"
-  DESC="GitOps Continuous Delivery for Kubernetes"
-elif [ "${CLI_NAME}" = "argo" ]; then
-  URL_BASE="https://github.com/argoproj/argo/releases/download"
-  CLASSNAME="Argo"
-  DESC="Get stuff done with container-native workflows for Kubernetes."
-elif [ "${CLI_NAME}" = "kubectl-argo-rollouts" ]; then
+if [ "${CLI_NAME}" = "kubectl-argo-rollouts" ]; then
   URL_BASE="https://github.com/argoproj/argo-rollouts/releases/download"
   CLASSNAME="KubectlArgoRollouts"
   DESC="Kubectl Argo Rollouts Plugin."
