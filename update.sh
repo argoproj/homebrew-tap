@@ -63,6 +63,14 @@ class ${CLASSNAME}${CLASS_POSTFIX} < Formula
     def install
       bin.install @@bin_name
       mv bin/ + @@bin_name.to_s, bin/\"${CLI_NAME}\"
+      kubectl_plugin_completion = <<~EOS
+        #!/usr/bin/env sh
+        # Call the __complete command passing it all arguments
+        kubectl argo rollouts __complete \"\$@\"
+      EOS
+
+      (bin/\"kubectl_complete-argo-rollouts\").write(kubectl_plugin_completion)
+      chmod 0755, bin/\"kubectl_complete-argo-rollouts\"
     end
 end"
 
