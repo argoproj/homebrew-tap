@@ -27,5 +27,9 @@ To update a versioned formula for rollouts version 1.3
 
 Then verify the tap works by running:
 ```bash
-brew [install|upgrade] --build-from-source ./kubectl-argo-rollouts.rb
+brew tap argoproj/local "$(pwd)"
+brew install --build-from-source argoproj/local/kubectl-argo-rollouts
 ```
+
+If the formula is already installed, use `reinstall` instead of `install`.
+Remove the temporary tap after testing with `brew untap argoproj/local`.

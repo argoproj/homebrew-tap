@@ -7,13 +7,19 @@ class KubectlArgoRolloutsAT12 < Formula
 
     if OS.mac?
       kernel = "darwin"
+      arch = "amd64"
       sha256 "a30b1b33829e2a4ee6ca0c4dd4d99f0dc654449d9714926fcb2e7b504aff37e0"
-    elsif OS.linux?
+    elsif OS.linux? && Hardware::CPU.arm?
       kernel = "linux"
+      arch = "arm64"
+      sha256 "23ddf76d5c51b8d86b1de9f2eebc7b2a37270d82040eb58f645df26c32464831"
+    elsif OS.linux? && Hardware::CPU.intel?
+      kernel = "linux"
+      arch = "amd64"
       sha256 "43ce6ab7105c3161690cd810c7a675994d0fb96527ee38fb76722393e61b29e1"
     end
 
-    @@bin_name = "kubectl-argo-rollouts-" + kernel + "-amd64"
+    @@bin_name = "kubectl-argo-rollouts-" + kernel + "-" + arch
     url baseurl + "/v1.2.2/" + @@bin_name
 
     def install
