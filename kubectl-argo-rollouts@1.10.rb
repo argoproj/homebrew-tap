@@ -1,30 +1,30 @@
 # This is an auto-generated file. DO NOT EDIT
-class KubectlArgoRolloutsAT19 < Formula
+class KubectlArgoRolloutsAT110 < Formula
     desc "Kubectl Argo Rollouts Plugin."
     homepage "https://argoproj.io"
     baseurl = "https://github.com/argoproj/argo-rollouts/releases/download"
-    version "v1.9.1"
+    version "v1.10.0"
 
     if OS.mac? && Hardware::CPU.arm?
       kernel = "darwin"
       arch = "arm64"
-      sha256 "e2ada94223e4cfffd8fbc14724e230b072becd007a7fde6f3296a95bcf56596e"
+      sha256 "0046896141a09e15913d0c4c2651516fb46b233f5595a5d2e462fa9a0d9d1e69"
     elsif OS.mac? && Hardware::CPU.intel?
       kernel = "darwin"
       arch = "amd64"
-      sha256 "1212551121b2d41ea61ea1f11703e486c34915145d3894c718e613d31e472305"
+      sha256 "1a41cdf72c45eb0bbe6fc6fcaa9529b8372044be33f1cea827487ad8d0bad395"
     elsif OS.linux? && Hardware::CPU.arm?
       kernel = "linux"
       arch = "arm64"
-      sha256 "44f4f5dc0668430cadc5f4cc52e4ae1bf0a3f2f60320af6b3b2edd3c826402b5"
+      sha256 "2d73e61091084769d16191f21fc686b9c2054892eb93d59046660e8c876a6865"
     elsif OS.linux? && Hardware::CPU.intel?
       kernel = "linux"
       arch = "amd64"
-      sha256 "466d93ccf767e975691359c6c9bb6750696e54c336d28ccd4d39e0f0519e8bf6"
+      sha256 "57a464e80c3e716076c9760e1d15ff06b853e3bcab3e22e30f4dba8a3e9f29b2"
     end
 
     @@bin_name = "kubectl-argo-rollouts-" + kernel + "-" + arch
-    url baseurl + "/v1.9.1/" + @@bin_name
+    url baseurl + "/v1.10.0/" + @@bin_name
 
     def install
       bin.install @@bin_name
